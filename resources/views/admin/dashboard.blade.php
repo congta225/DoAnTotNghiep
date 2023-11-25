@@ -129,7 +129,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Doanh thu </h4>
+                        <h4>Doanh thu theo tháng </h4>
                     </div>
                     <div class="card-body">
                         <canvas id="myChart2" height="158"></canvas>

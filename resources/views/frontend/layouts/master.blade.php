@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="{{asset('frontend/css/venobox.min.css')}}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
     @if($settings->layout === 'RTL')
@@ -34,7 +39,7 @@
     @endif
 </head>
 
-<body>
+<body style="font-family: 'Montserrat', sans-serif;">
 
     <!--============================
         HEADER START

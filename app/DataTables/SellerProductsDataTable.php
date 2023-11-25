@@ -42,6 +42,10 @@ class SellerProductsDataTable extends DataTable
         ->addColumn('image', function($query){
             return "<img width='70px' src='".asset($query->thumb_image)."' ></img>";
         })
+        ->addColumn('price', function($query){
+            return number_format($query->price,0,'.','.').getCurrencyIcon();
+        })
+
         ->addColumn('type', function($query){
             switch ($query->product_type) {
                 case 'new_arrival':

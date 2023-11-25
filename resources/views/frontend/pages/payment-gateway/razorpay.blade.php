@@ -22,7 +22,6 @@ aria-labelledby="v-pills-home-tab">
                         data-prefill.email="{{Auth::user()->email}}"
                         data-theme.color="#ff7529"
                     >
-
                     </script>
                 </form>
             </div>

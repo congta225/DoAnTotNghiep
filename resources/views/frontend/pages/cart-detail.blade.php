@@ -125,7 +125,7 @@
                         <p class="total"><span>Tổng tiền:</span> <span id="cart_total">{{number_format(getMainCartTotal(),0,'.','.')}}{{$settings->currency_icon}}</span></p>
 
                         <form id="coupon_form">
-                            <input type="text" placeholder="Coupon Code" name="coupon_code" value="{{session()->has('coupon') ? session()->get('coupon')['coupon_code'] : ''}}">
+                            <input type="text" placeholder="Mã giảm giá" name="coupon_code" value="{{session()->has('coupon') ? session()->get('coupon')['coupon_code'] : ''}}">
                             <button type="submit" class="common_btn">Áp dụng</button>
                         </form>
                         <a class="common_btn mt-4 w-100 text-center" href="{{route('user.checkout')}}">Thanh toán</a>

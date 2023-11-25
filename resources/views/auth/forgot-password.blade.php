@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-{{$settings->site_name}} || Forgot Password
+{{$settings->site_name}} || Quên mật khẩu
 @endsection
 
 @section('content')

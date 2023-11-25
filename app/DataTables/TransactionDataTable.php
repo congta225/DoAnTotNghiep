@@ -30,7 +30,7 @@ class TransactionDataTable extends DataTable
                 return $query->amount.' '.$query->order->currency_name;
             })
             ->addColumn('amount_in_real_currency', function($query){
-                return $query->amount_real_currency.' '.'đ';
+                return number_format($query->amount_real_currency,0,'.','.').' '.'đ';
             })
             ->filterColumn('invoice_id', function($query, $keyword){
                 $query->whereHas('order', function($query) use ($keyword){

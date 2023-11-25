@@ -21,6 +21,7 @@
                       <li><span>Tỉnh thành :</span> {{$address->country}}</li>
                       <li><span>Quận huyện :</span> {{$address->state}}</li>
                       <li><span>Phường xã :</span> {{$address->city}}</li>
+                      <li><span>Mã bưu điện :</span> {{$address->zip}}</li>
                       <li><span>Địa chỉ chi tiết :</span> {{$address->address}}</li>
                     </ul>
                     <div class="wsus__address_btn">

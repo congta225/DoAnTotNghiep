@@ -17,7 +17,7 @@
             <a href="{{route('vendor.products-variant.index', ['product' => $product->id])}}" class="btn btn-warning mb-4"><i class="fas fa-long-arrow-left"></i> Quay lại</a>
           <div class="dashboard_content mt-2 mt-md-0">
             <h3><i class="far fa-user"></i> Biến thể Item</h3>
-            <h6>Variant: {{$variant->name}}</h6>
+            <h6>Tên biến thể: {{$variant->name}}</h6>
             <div class="create_button">
                 <a href="{{route('vendor.products-variant-item.create', ['productId' => $product->id, 'variantId' => $variant->id])}}" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm mới</a>
             </div>

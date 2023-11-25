@@ -33,40 +33,40 @@ class VendorOrderDataTable extends DataTable
                 return $query->user->name;
             })
             ->addColumn('amount', function($query){
-                return $query->currency_icon.$query->amount;
+                return $query->amount.$query->currency_icon;
             })
             ->addColumn('date', function($query){
                 return date('d-M-Y', strtotime($query->created_at));
             })
             ->addColumn('payment_status', function($query){
                 if($query->payment_status === 1){
-                    return "<span class='badge bg-success'>complete</span>";
+                    return "<span class='badge bg-success'>Hoàn thành</span>";
                 }else {
-                    return "<span class='badge bg-warning'>pending</span>";
+                    return "<span class='badge bg-warning'>Chờ xử lý</span>";
                 }
             })
             ->addColumn('order_status', function($query){
                 switch ($query->order_status) {
                     case 'pending':
-                        return "<span class='badge bg-warning'>pending</span>";
+                        return "<span class='badge bg-warning'>Chờ xử lý</span>";
                         break;
                     case 'processed_and_ready_to_ship':
-                        return "<span class='badge bg-info'>processed</span>";
+                        return "<span class='badge bg-info'>Đã xử lý</span>";
                         break;
                     case 'dropped_off':
-                        return "<span class='badge bg-info'>dropped off</span>";
+                        return "<span class='badge bg-info'>Đã giao cho bên vận chuyển</span>";
                         break;
                     case 'shipped':
-                        return "<span class='badge bg-info'>shipped</span>";
+                        return "<span class='badge bg-info'>Chờ vận chuyển</span>";
                         break;
                     case 'out_for_delivery':
-                        return "<span class='badge bg-primary'>out for delivery</span>";
+                        return "<span class='badge bg-primary'>Đang vận chuyển</span>";
                         break;
                     case 'delivered':
-                        return "<span class='badge bg-success'>delivered</span>";
+                        return "<span class='badge bg-success'>Đã vận chuyển xong</span>";
                         break;
                     case 'canceled':
-                        return "<span class='badge bg-danger'>canceled</span>";
+                        return "<span class='badge bg-danger'>Hủy đơn</span>";
                         break;
                     default:
                         # code...
@@ -117,18 +117,15 @@ class VendorOrderDataTable extends DataTable
     {
         return [
             Column::make('id'),
-            Column::make('invocie_id'),
-            Column::make('customer'),
-            Column::make('date'),
-            Column::make('product_qty'),
-            Column::make('amount'),
-            Column::make('order_status'),
-            Column::make('payment_status'),
-
-            Column::make('payment_method'),
-
-
-            Column::computed('action')
+            Column::make(['data' => 'invocie_id', 'title' => 'Mã đơn hàng']),
+            Column::make(['data' => 'customer', 'title' => 'Khách hàng']),
+            Column::make(['data' => 'date', 'title' => 'Ngày đặt hàng']),
+            Column::make(['data' => 'product_qty', 'title' => 'Số lượng']),
+            Column::make(['data' => 'amount', 'title' => 'Giá']),
+            Column::make(['data' => 'order_status', 'title' => 'Trạng thái đặt hàng']),
+            Column::make(['data' => 'payment_status', 'title' => 'Trạng thái thanh toán']),
+            Column::make(['data' => 'payment_method', 'title' => 'Phương thức thanh toán']),
+            Column::make(['data' => 'action', 'title' => 'Hành động'])
             ->exportable(false)
             ->printable(false)
             ->width(200)

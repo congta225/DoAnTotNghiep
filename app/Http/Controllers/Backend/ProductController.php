@@ -22,7 +22,7 @@ class ProductController extends Controller
 {
     use ImageUploadTrait;
     /**
-     * Display a listing of the resource.
+     * Hiển thị danh sách
      */
     public function index(ProductDataTable $dataTable)
     {
@@ -30,7 +30,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Hiển thị biểu mẫu để tạo sp mới.
      */
     public function create()
     {
@@ -40,7 +40,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Lưu sản phẩm mới tạo trong bộ nhớ.
      */
     public function store(Request $request)
     {
@@ -58,7 +58,7 @@ class ProductController extends Controller
             'status' => ['required']
         ]);
 
-        /** Handle the image upload */
+        /** Xử lý tải lên hình ảnh */
         $imagePath = $this->uploadImage($request, 'image', 'uploads');
 
         $product = new Product();

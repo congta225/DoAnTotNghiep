@@ -56,7 +56,7 @@
                         <a class="nav-link" href="{{ route('admin.products.index') }}">Sản phẩm</a>
                     </li>
                     <li class="{{ setActive(['admin.seller-products.*']) }}"><a class="nav-link"
-                            href="{{ route('admin.seller-products.index') }}">Sản phẩm của người bán</a></li>
+                            href="{{ route('admin.seller-products.index') }}">Sản phẩm của vendor</a></li>
                     <li class="{{ setActive(['admin.seller-pending-products.*']) }}"><a class="nav-link"
                             href="{{ route('admin.seller-pending-products.index') }}">Sản phẩm chờ duyệt</a></li>
 
@@ -237,13 +237,13 @@
                     <li class="{{ setActive(['admin.customer.index']) }}"><a class="nav-link"
                             href="{{ route('admin.customer.index') }}">Danh sách khách hàng</a></li>
                     <li class="{{ setActive(['admin.vendor-list.index']) }}"><a class="nav-link"
-                            href="{{ route('admin.vendor-list.index') }}">Danh sách nhà cung cấp</a></li>
+                            href="{{ route('admin.vendor-list.index') }}">Danh sách vendor</a></li>
 
                     <li class="{{ setActive(['admin.vendor-requests.index']) }}"><a class="nav-link"
-                            href="{{ route('admin.vendor-requests.index') }}">Chờ duyệt nhà cung cấp</a></li>
+                            href="{{ route('admin.vendor-requests.index') }}">Chờ duyệt vendor</a></li>
 
                     <li class="{{ setActive(['admin.admin-list.index']) }}"><a class="nav-link"
-                            href="{{ route('admin.admin-list.index') }}">Danh sách quản trị page</a></li>
+                            href="{{ route('admin.admin-list.index') }}">Danh sách quản trị</a></li>
 
                     <li class="{{ setActive(['admin.manage-user.index']) }}"><a class="nav-link"
                             href="{{ route('admin.manage-user.index') }}">Quản lý người dùng</a></li>

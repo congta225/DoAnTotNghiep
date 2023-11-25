@@ -37,7 +37,14 @@ var myChart = new Chart(ctx, {
         },
         ticks: {
           beginAtZero: true,
-          stepSize: 1500000
+          stepSize: 1500000,
+          callback: function(stepSize) {
+            if (parseInt(stepSize) >= 1000) {
+                return  stepSize.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'đ';
+            } else {
+                return stepSize+ 'đ';
+            }
+        },
         }
       }],
       xAxes: [{
@@ -48,6 +55,7 @@ var myChart = new Chart(ctx, {
           display: false
         }
       }]
+
     },
   }
 });

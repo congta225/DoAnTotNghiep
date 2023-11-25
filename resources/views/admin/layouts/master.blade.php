@@ -27,6 +27,10 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/components.css') }}">
+    {{-- Font chữ --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
     @if ($settings->layout === 'RTL')
         <link rel="stylesheet" href="{{ asset('backend/assets/css/rtl.css') }}">
@@ -49,7 +53,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" style="font-family: 'Montserrat', sans-serif;">
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg"></div>
 

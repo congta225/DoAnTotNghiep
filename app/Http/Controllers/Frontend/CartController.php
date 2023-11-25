@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 class CartController extends Controller
 {
 
-    /** Show cart page  */
+    /** Hiển thị trang giỏ hàng  */
     public function cartDetails()
     {
         $cartItems = Cart::content();
@@ -31,13 +31,13 @@ class CartController extends Controller
         return view('frontend.pages.cart-detail', compact('cartItems', 'cartpage_banner_section'));
     }
 
-    /** Add item to cart */
+    /** Thêm sp vào giỏ hàng */
     public function addToCart(Request $request)
     {
 
         $product = Product::findOrFail($request->product_id);
 
-        // check product quantity
+        // Kiểm tra số lượng sản phẩm
         if($product->qty === 0){
             return response(['status' => 'error', 'message' => 'Hết sản phẩm']);
         }elseif($product->qty < $request->qty){
@@ -57,7 +57,7 @@ class CartController extends Controller
         }
 
 
-        /** check discount */
+        /** Kiểm tra mã giảm giá */
         $productPrice = 0;
 
         if(checkDiscount($product)){
@@ -82,13 +82,13 @@ class CartController extends Controller
         return response(['status' => 'success', 'message' => 'Đã thêm vào giỏ hàng thành công!']);
     }
 
-    /** Update product quantity */
+    /** Cập nhật lại số lượng sản phẩm */
     public function updateProductQty(Request $request)
     {
         $productId = Cart::get($request->rowId)->id;
         $product = Product::findOrFail($productId);
 
-        // check product quantity
+        // Kiểm tra số lượng sản phẩm
         if($product->qty === 0){
             return response(['status' => 'error', 'message' => 'Hết sản phẩm']);
         }elseif($product->qty < $request->qty){

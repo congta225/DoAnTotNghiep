@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-{{$settings->site_name}} || Login
+{{$settings->site_name}} || Đăng nhập
 @endsection
 
 @section('content')
@@ -14,10 +14,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4>Đăng nhập / Đăng xuất</h4>
+                        <h4>Đăng nhập / Đăng ký</h4>
                         <ul>
                             <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Đăng nhập / Đăng xuất</a></li>
+                            <li><a href="#">Đăng nhập / Đăng ký</a></li>
                         </ul>
                     </div>
                 </div>
